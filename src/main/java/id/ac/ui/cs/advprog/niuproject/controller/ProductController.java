@@ -1,13 +1,11 @@
 package id.ac.ui.cs.advprog.niuproject.controller;
-
 import id.ac.ui.cs.advprog.niuproject.model.Product;
 import id.ac.ui.cs.advprog.niuproject.service.ProductService;
-import lombok.Setter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @Controller
@@ -50,7 +48,7 @@ public class ProductController {
         return "redirect:/product/list";
     }
 
-    @DeleteMapping("/delete/{id")
+    @DeleteMapping("/delete/{id}")
     public String deleteProductPage(@PathVariable("id") String productId, Model model) {
         Product product = service.findById(productId);
         if (product != null) {
