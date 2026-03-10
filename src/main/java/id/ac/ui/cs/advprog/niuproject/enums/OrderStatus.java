@@ -1,3 +1,5 @@
+package id.ac.ui.cs.advprog.niuproject.enums;
+
 import lombok.Getter;
 
 @Getter
