@@ -3,7 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class OrderTest {
     private List<Product> products;
@@ -35,7 +36,7 @@ class OrderTest {
     @Test
     void testCreateOrderDefaultStatus() {
         Order order = new Order("13652556-012a-4c07-b546-54eb1396d79b",
-                this.producta, 1708560000L,"Safira Sudrajat");
+                this.products, 1708560000L,"Safira Sudrajat");
 
         assertSame(this.products, order.getProducts());
         assertEquals(2, order.getProducts().size());
