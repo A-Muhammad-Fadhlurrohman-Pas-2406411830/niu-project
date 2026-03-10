@@ -1,20 +1,24 @@
-package id.ac.ui.cs.advprog.niuproject.model;
+import id.ac.ui.cs.advprog.niuproject.model.Product;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.util.List;
 
-enum OrderStatus {
-    WAITING_PAYMENT,
-    FAILED,
-    CANCELLED,
-    SUCCESS
-}
-
-@Getter @Setter
+@Builder
+@Getter
 public class Order {
-    private String orderId;
-    private List<Product> products;
-    private String author;
-    private OrderStatus status = OrderStatus.WAITING_PAYMENT;
+    String id;
+    List<Product> products;
+    Long orderTime;
+    String author;
+    @Setter
+    String status;
+
+    public Order(String id, List<Product> products, Long orderTime, String author) {
+    }
+
+    public Order(String id, List<Product> products, Long orderTime, String author, String status) {
+    }
 }
 
