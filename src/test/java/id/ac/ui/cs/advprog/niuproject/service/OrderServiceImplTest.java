@@ -3,6 +3,7 @@ import id.ac.ui.cs.advprog.niuproject.enums.OrderStatus;
 import id.ac.ui.cs.advprog.niuproject.model.Order;
 import id.ac.ui.cs.advprog.niuproject.model.Product;
 import id.ac.ui.cs.advprog.niuproject.repository.OrderRepository;
+import id.ac.ui.cs.advprog.niuproject.model.BaseProduct;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,19 +19,19 @@ import org.mockito.InjectMocks;
 @ExtendWith(MockitoExtension.class)
 class OrderServiceTest {
 
-    @injectMocks
-    OrderServiceImpl orderService;
+    @InjectMocks
+    OrderService orderService;
     @Mock
     OrderRepository orderRepository;
     List<Order> orders;
 
     @BeforeEach
     void setUp() {
-        List<Product> products = new ArrayList<>();
-        Product product1 = new Product();
-        product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
-        product1.setProductName("Sampo Cap Bambang");
-        product1.setProductQuantity(2);
+        List<BaseProduct> products = new ArrayList<>();
+        BaseProduct product1 = new BaseProduct();
+        product1.setId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product1.setName("Sampo Cap Bambang");
+        product1.setQuantity(2);
         products.add(product1);
 
         orders = new ArrayList<>();
@@ -108,7 +109,7 @@ class OrderServiceTest {
 
     @Test
     void testFindByIdIfIdNotFound() {
-        do doReturn(null).when(orderRepository).findById("zczc");
+        doReturn(null).when(orderRepository).findById("zczc");
         assertNull(orderService.findById("zczc"));
     }
 

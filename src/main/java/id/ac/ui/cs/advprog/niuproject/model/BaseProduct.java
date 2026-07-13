@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public abstract class BaseProduct {
+public class BaseProduct {
     private String id;
     private String name;
     private int quantity;

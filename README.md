@@ -1,5 +1,4 @@
-Module 1:
-Reflection 1
+???????????????????????
 Clean Code:
 Penggunaan nama yang jelas seperti edit dan delete
 Setiap fungsi memiliki Single Responsibility
@@ -7,6 +6,7 @@ Fungsi pendek, hanya untuk satu fungsi
 Secure Coding:
 Ada input validation (Jika tidak ditemukan product, tidak dijalankan)
 
+Module 1
 Reflection 2
 1
 How many unit tests should be made in a class?

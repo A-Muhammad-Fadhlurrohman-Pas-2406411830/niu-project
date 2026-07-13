@@ -10,12 +10,12 @@ import java.util.List;
 @Getter
 public class Order {
     String id;
-    List<Product> products;
+    List<BaseProduct> products;
     Long orderTime;
     String author;
     String status;
 
-    public Order(String id, List<Product> products, Long orderTime, String author) {
+    public Order(String id, List<BaseProduct> products, Long orderTime, String author) {
         this.id = id;
         this.orderTime = orderTime;
         this.author = author;
@@ -28,7 +28,7 @@ public class Order {
         }
     }
 
-    public Order(String id, List<Product> products, Long orderTime, String author, String status) {
+    public Order(String id, List<BaseProduct> products, Long orderTime, String author, String status) {
         this(id, products, orderTime, author);
         this.setStatus(status);
     }
